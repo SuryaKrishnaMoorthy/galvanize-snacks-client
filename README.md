@@ -11,12 +11,7 @@ Say what the step will be
 
 ```
 NPM INSTALL
-```
-
-And repeat
-
-```
-until finished
+NPM START
 ```
 
 End with an example of getting some data out of the system or using it for a little demo
