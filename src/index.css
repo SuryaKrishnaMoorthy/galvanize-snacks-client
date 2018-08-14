@@ -1,0 +1,79 @@
+.navbar {
+  margin: 0;
+  width: 100%;
+}
+
+.navbar-brand {
+  font-size: 35px;
+}
+
+.nav-item {
+  text-align: right;
+}
+
+.nav-item a {
+  font-size: 20px;
+  color: rgb(72, 72, 72);
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.nav-item a:hover {
+  border: 2px;
+}
+
+
+.jumbotron .img {
+    margin-bottom: 0px;
+    opacity: 0.3;
+    color: #fff;
+    background: #000 url("https://4.bp.blogspot.com/-gk22wmKM5Iw/WMP5NFAKKFI/AAAAAAABksw/gukMn0LhprYk3AZQCA4F23e1xBFu9ZPBgCEw/s1600/%25E5%25A6%2582%25E4%25BD%2595%25E5%2581%259A%25E4%25B8%2580%25E5%2580%258B%25E8%25B3%2587%25E6%25BA%2590%25E6%2595%25B4%25E5%2590%2588%25E7%259A%2584%25E9%25AB%2598%25E6%2589%258B_2.png") center;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    overflow: hidden;
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+.jumbotron h2 {
+  text-align: center;
+}
+
+.jumbotron {
+  height: 300px;
+  position: relative;
+  padding-top: 50px;
+  text-align: center;
+  padding-bottom: 50px;
+  margin-bottom: 0px;
+}
+
+.jumbotron .container {
+  position: relative;
+  z-index: 2;
+}
+
+@media screen and (max-width: 768px) {
+  .jumbotron {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+.carousel-item {
+    height: 90vh;
+}
+
+
+.footer {
+  width: 100vw;
+  border: solid gray 2px;
+  color: black;
+  /* opacity: 0.1; */
+  background-image: url("https://holiday.wholefoodsmarket.com/static/1036/01.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
