@@ -1,22 +1,20 @@
-import {Jumbotron, Button} from 'reactstrap';
-import React from 'react';
+import {Jumbotron} from 'reactstrap';
+import React from 'react'
 
-export default class Jumbo extends React.Component {
-  render() {
-    return (<div>
-      <Jumbotron>
-        <div className="img"></div>
-        <div className="container">
-        <h1 className="display-3">Snackers Realm</h1>
+const Jumbo = ({props}) => {
+  return (
+  <div>
+    <Jumbotron style={props.height}>
+      <div className="img"></div>
+      <div className="container">
+        <h1 className="display-3">{props.title}</h1>
         <hr className="my-2"/>
         <p className="lead">
-          The Ultimate Snackers Database
-        </p>
-        <p className="lead">
-          <Button color="primary">Browse</Button>
+          {props.subtitle}
         </p>
       </div>
-      </Jumbotron>
-    </div>)
-  }
-}
+    </Jumbotron>
+  </div>
+)}
+
+export default Jumbo

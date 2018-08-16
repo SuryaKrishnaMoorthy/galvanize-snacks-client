@@ -22,7 +22,6 @@
   border: 2px;
 }
 
-
 .jumbotron .img {
     margin-bottom: 0px;
     opacity: 0.3;
@@ -42,7 +41,7 @@
 }
 
 .jumbotron {
-  height: 300px;
+  /* height: 90vh; */
   position: relative;
   padding-top: 50px;
   text-align: center;
@@ -62,8 +61,48 @@
   }
 }
 
-.carousel-item {
-    height: 90vh;
+.container-fluid {
+  padding: 0px;
+  margin: 0px;
+}
+
+h1 {
+  text-align: center;
+}
+
+#who {
+  min-height: 60vh;
+}
+
+#what {
+  min-height: 60vh;
+}
+
+.circle {
+  margin-left: 4rem;
+  background-color: orange;
+  height: 300px;
+  width: 300px;
+  border-radius: 100%;
+}
+
+#featured-products {
+ padding: 2rem;
+ min-height: 60vh;
+}
+
+.card-columns {
+  margin: 10px;
+}
+
+
+p {
+  margin-top: .5rem;
+  margin-bottom: 0px;
+}
+
+#form {
+  margin: 3rem
 }
 
 
