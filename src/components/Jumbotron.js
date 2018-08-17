@@ -3,7 +3,6 @@ import React from 'react'
 
 const Jumbo = ({props}) => {
   return (
-  <div>
     <Jumbotron style={props.height}>
       <div className="img"></div>
       <div className="container">
@@ -14,7 +13,6 @@ const Jumbo = ({props}) => {
         </p>
       </div>
     </Jumbotron>
-  </div>
 )}
 
 export default Jumbo

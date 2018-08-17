@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import {getAllSnax} from '../state/actions'
-
 import {Button} from 'reactstrap';
 import Jumbo from '../components/Jumbotron'
 import Cards from '../components/Cards'
@@ -22,8 +21,8 @@ class Snacks extends Component {
       title: 'Snackers Realm',
       subtitle: 'The Ultimate Snackers Database'
     }
-
-    return (<section>
+    return (
+    <section>
       <Jumbo props={jumboStyle}/>
       <div className="text-right">
         <p className="lead">

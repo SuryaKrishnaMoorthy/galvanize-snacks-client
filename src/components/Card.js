@@ -17,18 +17,19 @@ class SingleCard extends React.Component {
           is_boolean
         }
       } = this.props
+      const link = `/snack/${id}`
     return (
-           <Card sm="6">
+           <Card sm="6" className="col-lg-4 col-md-2 col-sm-2">
              <CardBody>
                <CardTitle>{name}</CardTitle>
-               <CardSubtitle>{price}</CardSubtitle>
+               <CardSubtitle>${price}</CardSubtitle>
              </CardBody>
-             <CardImg width="100%" src={img} alt="Card image cap" />
+             <CardImg id="card_img" width="100%" src={img} alt="Card image cap" />
              <CardBody>
                <CardText>{description}</CardText>
-               <Link to="/snack">
-                 <Button color="secondary" size="lg" block>
-                   More
+               <Link to={link}>
+                 <Button color="info" size="lg" block>
+                   More Info
                  </Button>
                </Link>
              </CardBody>

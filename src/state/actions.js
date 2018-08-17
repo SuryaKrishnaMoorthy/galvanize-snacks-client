@@ -1,7 +1,7 @@
 import axios from 'axios'
 export const GET_ALL_SNAX = 'GET_ALL_SNAX'
-export const GET_ALL_REV = 'GET_ALL_REV'
 export const GET_FEATURED_SNAX = 'GET_FEATURED_SNAX'
+export const GET_ONE_SNAX = 'GET_ONE_SNAX'
 
 
 const featuredCards = [
@@ -30,9 +30,18 @@ const featuredCards = [
 
 export const getAllSnax = () => {
   return(dispatch) => {
-    axios.get('https://secret-plateau-42018.herokuapp.com/api/snacks')
+    axios.get('https://galvanize-snacks-api.herokuapp.com/api/snacks')
     .then((response) => {
-      dispatch({type: GET_ALL_SNAX, payload: response.data})
+      dispatch({type: GET_ALL_SNAX, payload: response.data.data})
+    })
+  }
+}
+
+export const getOneSnax = (id) => {
+  return(dispatch) => {
+    axios.get(`https://galvanize-snacks-api.herokuapp.com/api/snacks/${id}`)
+    .then((response) => {
+      dispatch({type: GET_ONE_SNAX, payload: response.data})
     })
   }
 }
@@ -40,14 +49,5 @@ export const getAllSnax = () => {
 export const getFeaturedSnax = () => {
   return(dispatch) => {
       dispatch({type: GET_FEATURED_SNAX, payload: featuredCards})
-  }
-}
-
-export const getAllRev = () => {
-  return(dispatch) => {
-    axios.get('https://secret-plateau-42018.herokuapp.com/reviews')
-    .then((response) => {
-      dispatch({type: GET_ALL_REV, payload: response.data.allReviews})
-    })
   }
 }
