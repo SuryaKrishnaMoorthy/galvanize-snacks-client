@@ -6,7 +6,9 @@ import {
   Label,
   Input,
   Col,
-  Button
+  Button,
+  InputGroup,
+  InputGroupAddon
 } from 'reactstrap';
 
 const SnackForm = ({props}) => {
@@ -19,26 +21,24 @@ const SnackForm = ({props}) => {
       <Label for="description">Snack Description</Label>
       <Input type="textarea" name="description" id="description"/>
     </FormGroup>
-
     <FormGroup>
-      <Label for="price">Price</Label>
-      <div className="input-group-prepend">
-        <span className="input-group-text">$</span>
-      <Input type="number" id="price"/>
-        <span className="input-group-text">.00</span>
-      </div>
+      <Label for="exampleUrl">Url</Label>
+      <Input type="url" name="url" id="exampleUrl" placeholder="url placeholder" />
     </FormGroup>
-
+    <FormGroup>
+    <Label for="perishavle">Snack Price?</Label>
+    <InputGroup>
+         <InputGroupAddon addonType="prepend">$</InputGroupAddon>
+         <Input placeholder="Amount" type="number" step="1" />
+         <InputGroupAddon addonType="append">.00</InputGroupAddon>
+    </InputGroup>
+    </FormGroup>
     <FormGroup>
       <Label for="perishavle">Is your snack perishable?</Label>
       <div>
         <CustomInput id="yes" type="checkbox" label="Yes" inline/>
         <CustomInput id="no" type="checkbox" label="No" inline/>
       </div>
-    </FormGroup>
-    <FormGroup>
-      <Label for="exampleCustomFileBrowser">Snack Image</Label>
-      <CustomInput id="snack-image" type="file" name="customFile"/>
     </FormGroup>
     <FormGroup check="check" row="row">
       <Col sm={{
