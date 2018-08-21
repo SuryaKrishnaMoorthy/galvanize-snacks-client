@@ -5,7 +5,6 @@ import {getFeaturedSnax} from '../state/actions'
 
 
 import {Container, Row, Col} from 'reactstrap';
-import {CardDeck} from 'reactstrap';
 import Cards from '../components/Cards'
 import Jumbo from '../components/Jumbotron'
 

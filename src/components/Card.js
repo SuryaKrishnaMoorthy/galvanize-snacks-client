@@ -1,5 +1,4 @@
 import React from 'react'
-import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import { Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle, Button } from 'reactstrap';
@@ -13,8 +12,7 @@ class SingleCard extends React.Component {
           name,
           description,
           price,
-          img,
-          is_boolean
+          img
         }
       } = this.props
       const link = `/snack/${id}`

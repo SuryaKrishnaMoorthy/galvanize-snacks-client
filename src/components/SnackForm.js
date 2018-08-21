@@ -11,44 +11,66 @@ import {
   InputGroupAddon
 } from 'reactstrap';
 
-const SnackForm = ({props}) => {
-  return (<Form>
+const SnackForm = ({handleEditSnack, handleAddSnack, singleSnack}) => {
+
+  const snack = {
+        id: singleSnack ? singleSnack.id : "",
+        name: singleSnack ? singleSnack.name : "",
+        description: singleSnack ? singleSnack.description : "",
+        price: singleSnack ? Number(singleSnack.price) : "",
+        img: singleSnack ? singleSnack.img : "",
+        is_perishable: singleSnack ? singleSnack.is_perishable : ""
+      }
+
+  return (
+  <Form className="form-horizontal well" onSubmit={event => {
+        event.preventDefault();
+        snack.id ? handleEditSnack(snack.id, event.target.title.value, event.target.description.value, event.target.price.value, event.target.img.value, (event.target.is_perishable.value || false)) :
+        handleAddSnack(event.target.title.value, event.target.description.value, event.target.price.value, event.target.img.value, (event.target.is_perishable.value || false));
+      }}>
+
     <FormGroup>
-      <Label for="name">Snack Name</Label>
-      <Input type="textarea" name="name" id="name"/>
+      <Label for="title">Snack Name</Label>
+      <Input type="textarea" defaultValue={snack.name} name="title" id="title" required/>
     </FormGroup>
+
     <FormGroup>
       <Label for="description">Snack Description</Label>
-      <Input type="textarea" name="description" id="description"/>
+      <Input type="textarea" defaultValue={snack.description} name="description" id="description" required/>
     </FormGroup>
     <FormGroup>
-      <Label for="exampleUrl">Url</Label>
-      <Input type="url" name="url" id="exampleUrl" placeholder="url placeholder" />
+      <Label for="url">Url</Label>
+      <Input type="url" name="img" defaultValue={snack.img} id="img" placeholder="url" required/>
     </FormGroup>
+
     <FormGroup>
-    <Label for="perishavle">Snack Price?</Label>
+    <Label for="price">Snack Price?</Label>
     <InputGroup>
          <InputGroupAddon addonType="prepend">$</InputGroupAddon>
-         <Input placeholder="Amount" type="number" step="1" />
+         <Input name="price" id="name" defaultValue={snack.price} placeholder="Amount" type="number" required/>
          <InputGroupAddon addonType="append">.00</InputGroupAddon>
     </InputGroup>
     </FormGroup>
-    <FormGroup>
-      <Label for="perishavle">Is your snack perishable?</Label>
-      <div>
-        <CustomInput id="yes" type="checkbox" label="Yes" inline/>
-        <CustomInput id="no" type="checkbox" label="No" inline/>
-      </div>
-    </FormGroup>
-    <FormGroup check="check" row="row">
+
+
+      <FormGroup>
+           <Label for="is_perishable">Is your snack perishable?</Label>
+         <div>
+           <CustomInput value="true" type="radio" id="true" name="is_perishable" label="Yes" inline/>
+           <CustomInput value="false" type="radio" id="false" name="is_perishable" label="No" inline/>
+         </div>
+       </FormGroup>
+
+    <FormGroup check>
       <Col sm={{
           size: 10,
           offset: 0
         }}>
-        <Button>Add Snack</Button>
+        <Button>{snack.id ? `Edit` : `Add`}</Button>
       </Col>
     </FormGroup>
-  </Form>);
+  </Form>
+);
 }
 
 export default SnackForm

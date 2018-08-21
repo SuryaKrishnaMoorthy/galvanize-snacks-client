@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
-import { getAllSnax, getFeaturedSnax} from './state/actions'
+
 
 import NavComponent from './components/Navbar'
 import Home from './containers/Home'
@@ -14,9 +12,7 @@ import Footer from './components/Footer'
 
 
 export class App extends Component {
-  componentDidMount(){
-    this.props.getAllSnax()
-  }
+
   render() {
     return (
       <div>
@@ -36,5 +32,4 @@ export class App extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => bindActionCreators({getAllSnax}, dispatch)
-export default connect(null, mapDispatchToProps)(App)
+export default App
