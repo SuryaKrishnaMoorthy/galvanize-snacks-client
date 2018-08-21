@@ -25,26 +25,19 @@ class Home extends Component {
     return (
     <Container fluid>
       <Jumbo props={jumboStyle}/>
-
-      <section id="who" className="container-fluid">
-        <h1>Who We Are</h1>
-      </section>
-
       <section id="what" className="container-fluid">
         <Row>
-          <Col>
-            <h1>What We Do</h1>
-          </Col>
+            <h1>Who & What</h1>
         </Row>
         <Row>
           <Col>
-            <div className="circle"></div>
+            <div className="circle">Community</div>
           </Col>
           <Col>
-            <div className="circle"></div>
+            <div className="circle">Snacks</div>
           </Col>
           <Col>
-            <div className="circle"></div>
+            <div className="circle">Reviews</div>
           </Col>
         </Row>
       </section>

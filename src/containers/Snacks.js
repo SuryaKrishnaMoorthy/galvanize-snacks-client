@@ -13,7 +13,24 @@ class Snacks extends Component {
     this.props.getAllSnax()
   }
 
+  compared = (a, b) => {
+    const nameA = a.name.toUpperCase().trim();
+    const nameB = b.name.toUpperCase().trim();
+
+    let comparison = 0;
+    if (nameA > nameB) {
+      comparison = 1;
+    } else if (nameA < nameB) {
+      comparison = -1;
+    }
+    return comparison;
+  }
+
+
   render() {
+
+    const sortedList = this.props.snackList.sort(this.compared)
+
     const jumboStyle = {
       height: {
         height: "40vh"
@@ -21,20 +38,21 @@ class Snacks extends Component {
       title: 'Snackers Realm',
       subtitle: 'The Ultimate Snackers Database'
     }
+
     return (
     <section>
       <Jumbo props={jumboStyle}/>
       <div className="text-right">
         <p className="lead">
           <Link to="/addsnack">
-            <Button outline color="success">
+            <Button outline="outline" color="success">
               Add Snack
             </Button>
           </Link>
         </p>
         <hr className="my-2"/>
       </div>
-      <Cards props={this.props.snackList}/>
+      <Cards props={sortedList}/>
     </section>)
   }
 }

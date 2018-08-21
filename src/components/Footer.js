@@ -2,8 +2,10 @@ import React from 'react';
 
 export default class Footer extends React.Component {
   render() {
-    return (<footer>
+    return (
+    <footer>
       <div className="footer page-footer font-small">
+        <div className="img"></div>
         <div className="container text-center text-md-left">
           <div className="row text-center text-md-left mt-3 pb-3">
             <div className="afterBox col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">

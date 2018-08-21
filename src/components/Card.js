@@ -26,7 +26,7 @@ class SingleCard extends React.Component {
              <CardBody>
                <CardText>{description}</CardText>
                <Link to={link}>
-                 <Button color="info" size="lg" block>
+                 <Button size="lg" block>
                    More Info
                  </Button>
                </Link>
