@@ -3,10 +3,8 @@ import React from 'react';
 export default class Footer extends React.Component {
   render() {
     return (
-    <footer>
-      <div className="footer page-footer font-small">
+      <div className="footer">
         <div className="img"></div>
-        <div className="container text-center text-md-left">
           <div className="row text-center text-md-left mt-3 pb-3">
             <div className="afterBox col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
               <h6 className="text-uppercase mb-4 font-weight-bold">Galvanize Snacks</h6>
@@ -54,37 +52,7 @@ export default class Footer extends React.Component {
                 <i className="fa fa-print mr-3"></i>
                 + 01 234 567 89</p>
             </div>
-          </div>
-          <div className="row d-flex align-items-center">
-            <div className="col-md-4 col-lg-4 ml-lg-0">
-              <div className="text-center text-md-right">
-                <ul className="list-unstyled list-inline">
-                  <li className="list-inline-item">
-                    <a className="btn-floating btn-sm rgba-white-slight mx-1">
-                      <i className="fa fa-facebook"></i>
-                    </a>
-                  </li>
-                  <li className="list-inline-item">
-                    <a className="btn-floating btn-sm rgba-white-slight mx-1">
-                      <i className="fa fa-twitter"></i>
-                    </a>
-                  </li>
-                  <li className="list-inline-item">
-                    <a className="btn-floating btn-sm rgba-white-slight mx-1">
-                      <i className="fa fa-google-plus"></i>
-                    </a>
-                  </li>
-                  <li className="list-inline-item">
-                    <a className="btn-floating btn-sm rgba-white-slight mx-1">
-                      <i className="fa fa-linkedin"></i>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
-    </footer>)
+      </div>)
   }
 }
