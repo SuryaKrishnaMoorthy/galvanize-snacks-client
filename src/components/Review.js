@@ -102,7 +102,7 @@ class Review extends React.Component {
   }
 }
 
-const mapStateToProps = () => ({})
+
 const mapDispatchToProps = (dispatch) => bindActionCreators({editReview}, dispatch)
 
-export default connect(mapStateToProps, mapDispatchToProps)(Review)
+export default connect(null, mapDispatchToProps)(Review)

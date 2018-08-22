@@ -16,14 +16,8 @@ class Snacks extends Component {
   compared = (a, b) => {
     const nameA = a.name.toUpperCase().trim();
     const nameB = b.name.toUpperCase().trim();
-
     let comparison = 0;
-    if (nameA > nameB) {
-      comparison = 1;
-    } else if (nameA < nameB) {
-      comparison = -1;
-    }
-    return comparison;
+    return nameA > nameB ? comparison = 1 : comparison = -1
   }
 
 

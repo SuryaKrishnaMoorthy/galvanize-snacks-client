@@ -1,7 +1,20 @@
+/* GLOBAL */
+
 html, body {
   max-width: 100%;
   overflow-x: hidden;
 }
+
+.container-fluid {
+  padding: 0px;
+  margin: 0px;
+}
+
+h1 {
+  text-align: center;
+}
+
+/* NavComponent */
 
 .navbar {
   margin: 0;
@@ -26,6 +39,8 @@ html, body {
 .nav-item a:hover {
   border: 2px;
 }
+
+/* JUMBO COMPONENT */
 
 .jumbotron .img {
   margin-bottom: 0px;
@@ -69,43 +84,13 @@ html, body {
   }
 }
 
-.container-fluid {
-  padding: 0px;
-  margin: 0px;
-}
+/* Card COMPONENT */
 
 .btn-block {
   background-color: #FFDAB9;
   color: black;
 }
 
-h1 {
-  text-align: center;
-}
-
-#what {
-  text-align: center;
-  min-height: 60vh;
-}
-
-#what .row {
-  justify-content: center;
-}
-
-.circle {
-  text-align: center;
-  font-size: 50px;
-  padding-top: 30%;
-  background-color: #FFDAB9;
-  height: 300px;
-  width: 300px;
-  border-radius: 100%;
-}
-
-#featured-products {
-  padding: 2rem;
-  min-height: 60vh;
-}
 
 .card-columns {
   margin: 10px;
@@ -131,16 +116,41 @@ img#card_img {
   object-fit: cover;
 }
 
+/* HOME COMPONENT */
+
+
+#what {
+  text-align: center;
+  min-height: 60vh;
+}
+
+#what .row {
+  justify-content: center;
+}
+
+.circle {
+  text-align: center;
+  font-size: 50px;
+  padding-top: 30%;
+  background-color: #FFDAB9;
+  height: 300px;
+  width: 300px;
+  border-radius: 100%;
+}
+
+#featured-products {
+  padding: 2rem;
+  min-height: 60vh;
+}
+
 .media-body {
   padding: 2rem;
 }
 
+/* Snack COMPONENT */
+
 #perishable {
   font-style: italic;
-}
-
-.form-check {
-  margin-bottom: 5px;
 }
 
 .text-right {
@@ -148,19 +158,22 @@ img#card_img {
   margin-bottom: 0;
 }
 
-.col {
-  flex-grow: 0;
+/* FORM COMPONENT */
+
+.form-check {
+  margin-bottom: 5px;
 }
 
 #form {
   margin: 3rem
 }
 
+/* Review COMPONENT */
+
 #reviews {
   margin-top:0px;
   margin-bottom: 2rem;
 }
-
 
 #review-block {
   background-color: white;
@@ -180,6 +193,8 @@ img#card_img {
   font-weight: 700;
   margin-bottom: 10px;
 }
+
+/* FOOTER COMPONENT */
 
 .footer {
   border-top: solid gray 2px;

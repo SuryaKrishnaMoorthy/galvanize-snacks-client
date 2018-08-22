@@ -1,7 +1,6 @@
 import React from 'react';
 
-export default class Footer extends React.Component {
-  render() {
+const Footer = () => {
     return (
       <div className="footer">
         <div className="img"></div>
@@ -53,6 +52,7 @@ export default class Footer extends React.Component {
                 + 01 234 567 89</p>
             </div>
         </div>
-      </div>)
-  }
-}
+      </div>
+    )}
+
+export default Footer

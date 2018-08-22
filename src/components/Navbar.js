@@ -1,8 +1,7 @@
 import {Navbar, NavItem, Nav, NavLink, NavbarBrand} from 'reactstrap';
 import React from 'react';
 
-export default class NavComponent extends React.Component {
-  render() {
+const NavComponent = () => {
     return (
     <Navbar>
       <NavbarBrand>Galvanize Snacks</NavbarBrand>
@@ -16,4 +15,5 @@ export default class NavComponent extends React.Component {
       </Nav>
     </Navbar>
   )}
-}
+
+export default NavComponent

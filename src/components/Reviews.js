@@ -4,7 +4,8 @@ import Review from './Review'
 
 const Reviews = ({props}) => {
 
-    return (<Container id="reviews">
+    return (
+    <Container id="reviews">
       {props.map(review => <Review key={review.id} review={review}/>)}
     </Container>)
   }
