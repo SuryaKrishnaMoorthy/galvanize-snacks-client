@@ -3,9 +3,9 @@ import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {getOneSnax, postReview} from '../state/actions'
 import {bindActionCreators} from 'redux'
-import Jumbo from '../components/Jumbotron'
-import Reviews from '../components/Reviews'
-import AddReview from '../components/AddReview'
+import Jumbo from '../components/shared/Jumbotron'
+import Reviews from '../components/reviews/Reviews'
+import AddReview from '../components/reviews/AddReview'
 import {Media, Col, Row, Button} from 'reactstrap';
 import ReactStars from 'react-stars'
 
@@ -17,7 +17,7 @@ class Snack extends Component {
     }
   }
   componentDidMount() {
-    const snackId = this.props.history.location.pathname.split('/')[2]
+    const snackId = this.props.match.params.id
     this.props.getOneSnax(snackId)
   }
 
@@ -30,8 +30,6 @@ class Snack extends Component {
   handleAddReview = (title, text, rating) => {
     this.props.postReview(this.props.singleSnack.id, title, text, rating)
   }
-
-
 
   render() {
     const {
@@ -49,7 +47,8 @@ class Snack extends Component {
     const {handleAddReview, toggleAdd} = this
 
     let averages = 0;
-    reviews ? averages = reviews.map(ele => ele.rating).reduce((total, rate) => total + parseInt(rate), 0) / reviews.length
+    reviews
+      ? averages = reviews.map(ele => ele.rating).reduce((total, rate) => total + parseInt(rate), 0) / reviews.length
       : null
 
     const jumboStyle = {
@@ -59,18 +58,17 @@ class Snack extends Component {
       title: name
     }
 
-    const edit_link = `/editsnack/${id}`
+    const edit_link = `/snacks/${id}/edit`
 
-    return (
-    <section>
+    return (<section>
       <Jumbo props={jumboStyle}/>
       <div id="snack_description">
         <Media>
           <Col>
-            <Media object src={img} id="snack_image" alt="food image"/>
+            <Media object="object" src={img} id="snack_image" alt="food image"/>
           </Col>
           <Row>
-            <Media body>
+            <Media body="body">
               {description}
               <br/>
               <br/>
@@ -83,14 +81,14 @@ class Snack extends Component {
                     : <span>Is Not Perishable</span>
                 }</div>
               <br/>
-              <br/>
+              <br/>Average Rating:
               <ReactStars count={5} value={averages} edit={false} size={24} color2={'#ffd700'}/>
               <br/>
               <br/>
               <br/>
               <div className="text-right">
                 <Link to={edit_link}>
-                  <Button size="sm" outline color="warning">
+                  <Button size="sm" outline="outline" color="warning">
                     Edit Snack
                   </Button>
                 </Link>
@@ -101,9 +99,8 @@ class Snack extends Component {
       </div>
       <hr className="my-2"/>
       <h2 className="text-center">Reviews</h2>
-
       <div className="text-right">
-        <Button onClick={this.toggleAdd} size="sm" outline color="success">
+        <Button onClick={this.toggleAdd} size="sm" outline="outline" color="success">
           Add Review
         </Button>
       </div>
@@ -125,7 +122,8 @@ class Snack extends Component {
 
 const mapStateToProps = ({singleSnack}) => ({singleSnack})
 const mapDispatchToProps = dispatch => bindActionCreators({
-  getOneSnax, postReview
+  getOneSnax,
+  postReview
 }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(Snack)

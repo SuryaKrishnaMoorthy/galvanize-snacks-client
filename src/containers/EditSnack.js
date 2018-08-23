@@ -2,13 +2,13 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {editSnack, getOneSnax} from '../state/actions'
 import {bindActionCreators} from 'redux'
-import SnackForm from '../components/SnackForm'
-import Jumbo from '../components/Jumbotron'
+import SnackForm from '../components/snacks/SnackForm'
+import Jumbo from '../components/shared/Jumbotron'
 
 class EditSnack extends Component {
 
   componentDidMount() {
-    const snackId = this.props.history.location.pathname.split('/')[2]
+    const snackId = this.props.match.params.id
     this.props.getOneSnax(snackId)
   }
 
@@ -19,7 +19,6 @@ class EditSnack extends Component {
 
   render() {
 
-
     const jumboStyle = {
       height: {
         height: "30vh"
@@ -28,8 +27,7 @@ class EditSnack extends Component {
       subtitle: ''
     }
 
-    return (
-    <section>
+    return (<section>
       <Jumbo props={jumboStyle}/>
       <div id="form">
         <SnackForm singleSnack={this.props.singleSnack} handleEditSnack={this.handleEditSnack}/>
@@ -40,7 +38,8 @@ class EditSnack extends Component {
 
 const mapStateToProps = ({singleSnack}) => ({singleSnack})
 const mapDispatchToProps = dispatch => bindActionCreators({
-editSnack, getOneSnax
+  editSnack,
+  getOneSnax
 }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditSnack)

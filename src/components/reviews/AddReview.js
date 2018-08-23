@@ -11,18 +11,22 @@ import {
 import ReactStars from 'react-stars'
 
 class AddReview extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      reviewRate: 0
+    }
+  }
+
+  ratingChanged = (newRating) => {
+    this.setState({reviewRate: newRating})
+  }
 
   render() {
-
-    let reviewRate;
-    const ratingChanged = (newRating) => {
-      reviewRate = newRating
-    }
-
     return (<Container>
       <Form className="form-horizontal well" onSubmit={event => {
           event.preventDefault();
-          this.props.handleAddReview(event.target.title.value, event.target.text.value, reviewRate);
+          this.props.handleAddReview(event.target.title.value, event.target.text.value, this.state.reviewRate);
           this.props.toggleAdd();
         }}>
         <div>
@@ -31,7 +35,7 @@ class AddReview extends React.Component {
         <FormGroup>
           <Label for="rating" sm={2}>
             Rating:</Label>
-          <ReactStars count={5} value={ratingChanged} onChange={ratingChanged} half={false} size={24} color2={'#ffd700'} required="required"/>
+          <ReactStars count={5} value={this.state.reviewRate} onChange={this.ratingChanged} half={false} size={24} color2={'#ffd700'} required="required"/>
         </FormGroup>
 
         <FormGroup row="row">

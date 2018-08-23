@@ -4,8 +4,8 @@ import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import {getAllSnax} from '../state/actions'
 import {Button} from 'reactstrap';
-import Jumbo from '../components/Jumbotron'
-import Cards from '../components/Cards'
+import Jumbo from '../components/shared/Jumbotron'
+import Cards from '../components/snacks/Cards'
 
 class Snacks extends Component {
 
@@ -17,9 +17,10 @@ class Snacks extends Component {
     const nameA = a.name.toUpperCase().trim();
     const nameB = b.name.toUpperCase().trim();
     let comparison = 0;
-    return nameA > nameB ? comparison = 1 : comparison = -1
+    return nameA > nameB
+      ? comparison = 1
+      : comparison = -1
   }
-
 
   render() {
 
@@ -33,12 +34,11 @@ class Snacks extends Component {
       subtitle: 'The Ultimate Snackers Database'
     }
 
-    return (
-    <section>
+    return (<section>
       <Jumbo props={jumboStyle}/>
       <div className="text-right">
         <p className="lead">
-          <Link to="/addsnack">
+          <Link to="/snacks/new">
             <Button outline="outline" color="success">
               Add Snack
             </Button>

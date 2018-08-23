@@ -1,11 +1,10 @@
-import { combineReducers } from 'redux'
-import { GET_ALL_SNAX, GET_FEATURED_SNAX, GET_ONE_SNAX} from './actions'
+import {combineReducers} from 'redux'
+import {GET_ALL_SNAX, GET_FEATURED_SNAX, GET_ONE_SNAX} from './actions'
 
 const INITIAL_VALUE = []
 
-
 const snackList = (state = INITIAL_VALUE, action) => {
-  switch(action.type){
+  switch (action.type) {
     case GET_ALL_SNAX:
       return action.payload
     default:
@@ -14,7 +13,7 @@ const snackList = (state = INITIAL_VALUE, action) => {
 }
 
 const singleSnack = (state = INITIAL_VALUE, action) => {
-  switch(action.type){
+  switch (action.type) {
     case GET_ONE_SNAX:
       return action.payload.data
     default:
@@ -23,7 +22,7 @@ const singleSnack = (state = INITIAL_VALUE, action) => {
 }
 
 const featuredSnacks = (state = INITIAL_VALUE, action) => {
-  switch(action.type){
+  switch (action.type) {
     case GET_FEATURED_SNAX:
       return action.payload
     default:
@@ -31,4 +30,4 @@ const featuredSnacks = (state = INITIAL_VALUE, action) => {
   }
 }
 
-export default combineReducers({ snackList, featuredSnacks, singleSnack})
+export default combineReducers({snackList, featuredSnacks, singleSnack})

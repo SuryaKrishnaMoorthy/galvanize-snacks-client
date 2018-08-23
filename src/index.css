@@ -120,7 +120,7 @@ img#card_img {
 
 
 #what {
-  text-align: center;
+  /* text-align: center; */
   min-height: 60vh;
 }
 
@@ -145,6 +145,10 @@ img#card_img {
 
 .media-body {
   padding: 2rem;
+}
+
+.col {
+flex-grow: 0;
 }
 
 /* Snack COMPONENT */

@@ -3,8 +3,7 @@ import {CardGroup} from 'reactstrap';
 import Card from './Card'
 
 const Cards = ({props}) => {
-  return (
-  <CardGroup>
+  return (<CardGroup>
     <div className="d-flex align-content-around flex-wrap">
       {
         props.map(card => {
