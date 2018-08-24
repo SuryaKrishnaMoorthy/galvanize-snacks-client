@@ -4,6 +4,7 @@ export const GET_ALL_SNAX = 'GET_ALL_SNAX'
 export const GET_FEATURED_SNAX = 'GET_FEATURED_SNAX'
 export const GET_ONE_SNAX = 'GET_ONE_SNAX'
 
+
 export const getAllSnax = () => {
   return async (dispatch) => {
     const payload = await Snacks.all()
@@ -24,6 +25,7 @@ export const getFeaturedSnax = () => {
     dispatch({type: GET_FEATURED_SNAX, payload})
   }
 }
+
 export const addSnack = (name, description, price, img, is_perishable) => {
   is_perishable = JSON.parse(is_perishable)
   return async (dispatch) => {

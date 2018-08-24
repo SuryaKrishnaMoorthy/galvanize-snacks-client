@@ -6,7 +6,7 @@ class Reviews {
   static create = async (snackId, {title, text, rating}) => {
     const response = await axios.post(`${BASE_URL}/snacks/${snackId}/reviews`, {title, text, rating})
     const review = response.data
-
+    
     return review
   }
 
